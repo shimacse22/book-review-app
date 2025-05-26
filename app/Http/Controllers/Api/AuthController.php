@@ -80,42 +80,42 @@ class AuthController extends Controller
       * Function: Auth user data/profile data
       */
 
-      public function userProfile(){
-        //dd(Auth::user());
-        try{
-            $user=Auth::user();
+    //   public function userProfile(){
+    //     //dd(Auth::user());
+    //     try{
+    //         $user=Auth::user();
 
-            if($user){
-                return ResponseHelper::success(message:'User profile fetch successfully',data: $user,statusCode:200);
-            }
+    //         if($user){
+    //             return ResponseHelper::success(message:'User profile fetch successfully',data: $user,statusCode:200);
+    //         }
 
-            return ResponseHelper::error(message:'Unable to fetch user data due to invalid token.',statusCode:400);
+    //         return ResponseHelper::error(message:'Unable to fetch user data due to invalid token.',statusCode:400);
 
-        }
-        catch(Exception $e){
-            Log::error('Unable to fetch user data: '.$e->getMessage().'-Line no. '.$e->getLine());
-            return ResponseHelper::error(message:'Unable to fetch user data,please try again.'.$e->getMessage(),statusCode:400);
-        }
-      }
-    /**
-     * Function:User profile logout.
-     */
-    public function destroy()
-    {
-        try{
-            $user=Auth::user();
+    //     }
+    //     catch(Exception $e){
+    //         Log::error('Unable to fetch user data: '.$e->getMessage().'-Line no. '.$e->getLine());
+    //         return ResponseHelper::error(message:'Unable to fetch user data,please try again.'.$e->getMessage(),statusCode:400);
+    //     }
+    //   }
+    // /**
+    //  * Function:User profile logout.
+    //  */
+    // public function destroy()
+    // {
+    //     try{
+    //         $user=Auth::user();
 
-            if($user){
-                $user->currentAccessToken()->delete();
-                return ResponseHelper::success(message:'User logout successfully',statusCode:200);
-            }
+    //         if($user){
+    //             $user->currentAccessToken()->delete();
+    //             return ResponseHelper::success(message:'User logout successfully',statusCode:200);
+    //         }
 
-            return ResponseHelper::error(message:'Unable to logout due to invalid token.',statusCode:400);
+    //         return ResponseHelper::error(message:'Unable to logout due to invalid token.',statusCode:400);
 
-        }
-        catch(Exception $e){
-            Log::error('Unable to logout due to some exception: '.$e->getMessage().'-Line no. '.$e->getLine());
-            return ResponseHelper::error(message:'Unable to logout due to some exception .'.$e->getMessage(),statusCode:400);
-        }
-    }
+    //     }
+    //     catch(Exception $e){
+    //         Log::error('Unable to logout due to some exception: '.$e->getMessage().'-Line no. '.$e->getLine());
+    //         return ResponseHelper::error(message:'Unable to logout due to some exception .'.$e->getMessage(),statusCode:400);
+    //     }
+    // }
 }

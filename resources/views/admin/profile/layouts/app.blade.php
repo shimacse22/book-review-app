@@ -75,7 +75,8 @@
                             </li>
 
                             <li class="nav-item">
-                                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                <form action="{{ route('admin.logout') }}" method="POST" style="display: inline;">
+                                    @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-link p-0">Logout</button>
                                 </form>

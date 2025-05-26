@@ -49,6 +49,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/profile', [UserProfileController::class, 'profile'])->name('admin.profile');
         
         Route::put('/profile/update', [UserProfileController::class, 'update'])->name('admin.profile.update');
+
+        Route::delete('/logout', [BackendAuthController::class, 'logout'])->name('admin.logout');
          // Book CRUD Routes
         Route::get('/books', [BooksController::class, 'index'])->name('books.index');
         Route::get('/books/create', [BooksController::class, 'create'])->name('books.create');

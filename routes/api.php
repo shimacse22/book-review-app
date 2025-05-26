@@ -10,7 +10,7 @@ Route::controller(AuthController::class)->group(function(){
 Route::post('register','register');
 Route::post('login','login');
 
-Route::get('profile','userProfile')->middleware('auth:sanctum');
+//Route::get('profile','userProfile')->middleware('auth:sanctum');
 Route::get('logout','destroy')->middleware('auth:sanctum');
 });
 
