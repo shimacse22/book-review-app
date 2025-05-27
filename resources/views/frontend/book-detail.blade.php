@@ -209,7 +209,6 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h5>${review.user.name}</h5>
-                            <span class="text-muted">${new Date(review.created_at).toLocaleDateString()}</span>
                         </div>
                         <div class="mb-3 star-rating">
                             <div class="back-stars">
